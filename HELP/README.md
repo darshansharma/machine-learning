@@ -1,5 +1,5 @@
 Web Urls to take help from -
 
 
-MNIST - [1](tensorflow.org.get_started/mnist/pros)
-[1]:www.tensorflow.org/get_started/mnist/pros
+MNIST - [tensorflow.org.get_started/mnist/pros](https://www.tensorflow.org/get_started/mnist/pros)
+
