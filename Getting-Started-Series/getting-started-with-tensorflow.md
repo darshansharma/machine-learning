@@ -21,9 +21,10 @@ Tensor("Const:0", shape=(), dtype=float32) Tensor("Const_1:0", shape=(), dtype=f
 ```  
 Notice that printing the nodes does not output the values 3.0 and 4.0 as one might have expected. Instead they are nodes that, when evalued, would produce 3.0 and 4.0 respectively. To actually evaluate the nodes, we must run the computational graph within a session.A session encapsulates the control and state of the TensorFlowr runtime.
 
->sess = tf.Session()
+```python
+sess = tf.Session()
 print sess.run([node1, node2])
-
+```  
 The above code creates a Session object and then run method to run enough of the computational graph to evaluate node1 and node2.
 
 Output will be - 
@@ -103,4 +104,3 @@ Output -
 [0.	0.30000001  0.60000002 0.900000004]
 ```  
 We've ceated a model but we don't know how good it is yet. To evaluate the model on training data, we need a y placeholder to provide the desired values, and we need to write a loss function.
-
