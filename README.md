@@ -1,2 +1,2 @@
 # neural-network
-Applications developed using neural network
+Applications developed using machine learning
