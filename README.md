@@ -1,2 +1,2 @@
-# neural-network
+# machine-learning
 Applications developed using machine learning
