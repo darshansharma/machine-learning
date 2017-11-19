@@ -8,12 +8,12 @@ There are 4 main operations in the CNN -
 
 The above operations are the basic building block for every CNN model.
 
-Preprocessing of Image - 
+**Preprocessing of Image**
 Channel is a conventional term used to reefer certain component of an image. An image from a standard digital camera will have three channels - red. gree, blue - we can imagine those three 2d-matrices stacked over each other(one for each color) each having pixel values in the range 0 to 255.
 The grayscale image has only one channel and that is what will go as an input to our cnn model. So conversion of image/preprocessing is required before passing the input to model.
 
 
-Convolution - 
+**Convolution**
 The primary purpose of convolution is to extract features from the input image. Convolution preserves the spatial relationship between pixels by learning image features using small squares of input data. 
 Consider a 5 * 5 image whose pixel values are only 0 or 1  - 
 
@@ -42,7 +42,7 @@ The size of the feature map is controlled by 3 parameters -
 2. Stride 
 3. Zero-padding
 
-NON-LINEARITY (ReLU)
+**NON-LINEARITY (ReLU)**
 ReLu stands for rectified linear unit and is non linear operation. Its output is given by - 
 
 Output = max(zero, Input)
@@ -50,7 +50,7 @@ Output = max(zero, Input)
 ReLu is an element wise operation and replaces all negative pixel values in the feature map by zero. The purpose of the relu is to introduce non linearity in our ConvNet, since most of the real world data we would want our CNN to learn is non linear (convolution is linear operation - element wise multiplication ,addition..)
 Other non linear functions such as tanh or sigmoid can also be used instead of ReLU but Relu has been found to peform better in most situations.
 
-POOLING - 
+**POOLING**
 
 Pooling reduces the dimensionality of each feature map but retains the most import information. Spatial pooling can be of different types - max, average, sum etc.
 In case of the max pooling we define a 2X2 window and take the largest element from the rectified feature map within that window. Instead of taking the largest element we could also take the average (Average Pooling) or sum of all the elements in that window. Max pooling in practice has shown to perfom better.
@@ -70,8 +70,7 @@ In the above figure we have 2 sets of the convolution , ReLU & pooling layers - 
 
 The output of the 2nd pooling layer acts as an input to the fully connected layer.
 
-FULLY CONNECTED LAYER - 
-
+**FULLY CONNECTED LAYER**
 
 The fully connected layer is the traditional multi layer perceptron that uses a softmax function at the output layer (SVM can also be used). 
 The output from the convolution and pooling layers represent high level features of the input image. The purpose of the FCL is to use these features for classifying the input image into various classes based on the training dataset.
@@ -79,7 +78,7 @@ The output from the convolution and pooling layers represent high level features
 The softmax at output layer takes a vector of arbitrary real-valued scores and squashes it to a vector of value between zero and one that sum to one.
 
 
-BACKPROPAGATION - 
+**BACKPROPAGATION**
 
 The convolution + pooling layers acts as feature extractors from the input image while FCL acts as a classifier. 
 
@@ -93,5 +92,3 @@ The overall process of training the convolution Neural network is summarized as 
 
 
 Note that above we used two sets of alternating convolution and pooling layers. Please be aware that these operations can be repeated any number of times in a CNN model. In fact some of the best models today have 10s of convolution and pooling layers.
-
-
